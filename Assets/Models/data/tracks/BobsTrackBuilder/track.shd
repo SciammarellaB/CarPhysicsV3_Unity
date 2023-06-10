@@ -1,0 +1,69 @@
+vf_standard
+{
+   vertex_shader
+   {
+      file=standard_v.cg
+   }
+   fragment_shader
+   {
+      file=standard_f.cg
+   }
+}
+
+;
+; Shaders
+;
+shader_road3~vf_standard
+{
+   layer0
+   {
+      map=road_tarmac001.tga
+   }
+}
+shader_grass0~vf_standard
+{
+   layer0
+   {
+      map=ground_grass001.tga
+   }
+}
+shader_road1~vf_standard
+{
+   cull=none
+   layer0
+   {
+      map=Bush01.tga
+      blendfunc=blend
+      alphafunc=greater 10
+      depthwrite=0
+      depthfunc=lequal
+   }
+   layer1
+   {
+      map=Bush01.tga
+      blendfunc=blend
+      alphafunc=gequal 200
+      depthwrite=1
+      depthfunc=lequal
+   }
+}
+shader_road2~vf_standard
+{
+   cull=none
+   layer0
+   {
+      map=Tree02.tga
+      blendfunc=blend
+      alphafunc=greater 10
+      depthwrite=0
+      depthfunc=lequal
+   }
+   layer1
+   {
+      map=Tree02.tga
+      blendfunc=blend
+      alphafunc=gequal 200
+      depthwrite=1
+      depthfunc=lequal
+   }
+}
